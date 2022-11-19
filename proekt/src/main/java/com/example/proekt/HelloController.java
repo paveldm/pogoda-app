@@ -2,6 +2,7 @@ package com.example.proekt;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -13,11 +14,15 @@ import java.util.Date;
 
 public class HelloController {
     @FXML
+    private Text gorod;
+    @FXML
     private AnchorPane background_img;
     @FXML
     private Text real_time;
     @FXML
     private VBox reboot_png;
+    @FXML
+    private TextField search_str;
     @FXML
     protected void onHelloButtonClick() {
         Date date = new Date();
@@ -34,7 +39,7 @@ public class HelloController {
         else {
             real_time.setText(String.valueOf(date.getHours()) + " : " + String.valueOf(date.getMinutes()));
         }
-        real_time.setStyle("-fx-font-size: 16px;");
+        real_time.setStyle("-fx-font-size: 18px;");
         if (date.getHours()>5 && date.getHours()<18){
             background_img.setStyle("-fx-background-image: url('file:C:/javaproekt/proekt/src/main/resources/com/example/proekt/images/day.jpg');");
         } else if (date.getHours()>=18) {
@@ -46,11 +51,15 @@ public class HelloController {
     }
     @FXML
     protected void onHoverPng(){
-        reboot_png.setStyle("-fx-background-color: #bae7e5;");
+        reboot_png.setStyle("-fx-background-color: rgba(0,0,0,0.25);");
     }
     @FXML
     protected void onHoverPng1(MouseEvent mouseEvent) {
         reboot_png.setStyle("-fx-background-color: transparent;");
 
+    }
+    public void onSearch() {
+        gorod.setText(search_str.getText());
+        onHelloButtonClick();
     }
 }
