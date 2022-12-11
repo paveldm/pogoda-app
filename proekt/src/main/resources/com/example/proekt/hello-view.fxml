@@ -9,21 +9,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 
 <AnchorPane fx:id="background_img" onMouseMoved="#onHelloButtonClick" pickOnBounds="false" style="-fx-background-image: url('file:C:/javaproekt/proekt/src/main/resources/com/example/proekt/images/day.jpg');" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.proekt.HelloController">
-    <VBox fx:id="reboot_png" layoutX="420" layoutY="20" maxWidth="10">
-        <ImageView  onMouseEntered="#onHoverPng" onMouseExited="#onHoverPng1" onMouseClicked="#onHelloButtonClick" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@images/reboot.png"/>
-            </image>
-        </ImageView>
-    </VBox>
+
     <VBox layoutX="290.0" layoutY="60.0">
         <TextField fx:id="search_str" focusTraversable="false"  prefHeight="33.0" prefWidth="130.0" promptText="Город" style="-fx-background-color: #bae7e5;" />
-        <Text fx:id="gorod" text="  "/>
         <HBox alignment="CENTER">
             <Text style="-fx-font-size: 18px;" fill="#ebebeb" layoutX="320.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сейчас "/>
             <Text fx:id="real_time" style="-fx-font-size: 18px;" fill="#ebebeb" layoutX="380.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-- : --"/>
@@ -31,7 +23,7 @@
     </VBox>
     <Button prefHeight="25" prefWidth="25" layoutX="425.0" layoutY="60.0" onAction="#onSearch" style="-fx-graphic: url('file:C:/javaproekt/proekt/src/main/resources/com/example/proekt/images/search.png'); -fx-content-display: graphic-only;"/>
     <VBox layoutX="60.0" layoutY="92.0">
-        <Text fill="#ebebeb" style="-fx-font-size: 29px;" fontSmoothingType="LCD" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Москва"/>
+        <Text fx:id="gorod" fill="#ebebeb" style="-fx-font-size: 29px;" fontSmoothingType="LCD" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Москва"/>
         <FlowPane layoutY="25.0" >
             <Text fill="#ebebeb" style="-fx-font-size: 44px;" strokeType="OUTSIDE" strokeWidth="0.0" text="+15°"/>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -50,7 +42,7 @@
                 </image>
             </ImageView>
             <Text text="   "/>
-            <Text fill="#ebebeb" style="-fx-font-size: 17px;" layoutX="100.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2,6 м/с, З"/>
+            <Text fx:id="wet" fill="#ebebeb" style="-fx-font-size: 17px;" layoutX="100.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2,6 м/с, З"/>
         </FlowPane>
         <FlowPane>
             <ImageView fitHeight="33.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -66,27 +58,26 @@
         <Text text="Рекомендованная одежда:" fill="#e9e9e9" style="-fx-font-size: 23px;" strokeType="OUTSIDE" strokeWidth="0.0"/>
         <Text text="    "/>
         <HBox spacing="10" alignment="CENTER">
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@images/warm_hat.png"/>
+                    <Image url="@images/cap.png"/>
                 </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@images/warm_jacket.png"/>
+                    <Image url="@images/jacket.png"/>
                 </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@images/jeans.png"/>
+                    <Image url="@images/shorts.png"/>
                 </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@images/boots.png"/>
+                    <Image url="@images/slippers.png"/>
                 </image>
             </ImageView>
         </HBox>
-
     </VBox>
 </AnchorPane>

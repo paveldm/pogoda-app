@@ -20,8 +20,6 @@ public class HelloController {
     @FXML
     private Text real_time;
     @FXML
-    private VBox reboot_png;
-    @FXML
     private TextField search_str;
     @FXML
     protected void onHelloButtonClick() {
@@ -49,17 +47,9 @@ public class HelloController {
             background_img.setStyle("-fx-background-image: url('file:C:/javaproekt/proekt/src/main/resources/com/example/proekt/images/night.jpg');");
         }
     }
-    @FXML
-    protected void onHoverPng(){
-        reboot_png.setStyle("-fx-background-color: rgba(0,0,0,0.25);");
-    }
-    @FXML
-    protected void onHoverPng1(MouseEvent mouseEvent) {
-        reboot_png.setStyle("-fx-background-color: transparent;");
 
-    }
     public void onSearch() {
-        gorod.setText(search_str.getText());
+        String searchText = search_str.getText(); //ВОЗВРАТ ВВЕДЕННОГО ГОРОДА
         onHelloButtonClick();
     }
 }
